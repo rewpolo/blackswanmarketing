@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | Black Swan Marketing</title>
+<meta name="description" content="Work with Black Swan Marketing or join the newsletter.">
+<link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@600&display=swap">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="wrap bar">
+<a class="brand" href="/"><img src="/assets/mark.svg" alt="" width="34" height="34"><span>Black Swan Marketing</span></a>
+<nav aria-label="Main"><a href="/portfolio">Work</a><a href="/about">About</a><a href="/contact" aria-current="page">Contact</a></nav>
+</div></header>
+<main id="main">
+<section class="page"><div class="wrap">
+<h1>Let's talk.</h1>
+<div class="forms">
+<section aria-labelledby="work-h"><h2 id="work-h">Work with me</h2>
+<p>Tell me about your practice. I'll reply by email.</p>
+<form id="work" data-endpoint="/api/inquiry" data-success="Thanks. I'll be in touch soon.">
+<label>Your name<input name="name" required autocomplete="name" maxlength="100"></label>
+<label>Email<input type="email" name="email" required autocomplete="email" maxlength="254"></label>
+<label>Practice name<input name="firm" autocomplete="organization" maxlength="150"></label>
+<label>City or metro area<input name="metro" maxlength="100"></label>
+<label>What do you want help with?
+<select name="topic"><option value="">Choose one</option><option>Getting found by new clients</option><option>Logo and brand</option><option>A website</option><option>A newsletter or email</option><option>Not sure yet</option></select></label>
+<label>Message<textarea name="message" rows="5" required maxlength="2000"></textarea></label>
+<div class="hp" aria-hidden="true"><label>Leave this field empty <input name="hp_check" tabindex="-1" autocomplete="off"></label></div><div class="cf-turnstile" data-sitekey="1x00000000000000000000AA"></div>
+<button class="btn" type="submit">Send message</button>
+<p class="status" role="status" aria-live="polite"></p>
+</form></section>
+<section id="newsletter" aria-labelledby="news-h"><h2 id="news-h">Join the newsletter</h2>
+<p>[Describe what subscribers get and how often.]</p>
+<form id="newsletter-form" data-endpoint="/api/newsletter" data-success="You're subscribed. Thanks for joining.">
+<label>First name (optional)<input name="name" autocomplete="given-name" maxlength="100"></label>
+<label>Email<input type="email" name="email" required autocomplete="email" maxlength="254"></label>
+<div class="hp" aria-hidden="true"><label>Leave this field empty <input name="hp_check" tabindex="-1" autocomplete="off"></label></div><div class="cf-turnstile" data-sitekey="1x00000000000000000000AA"></div>
+<button class="btn" type="submit">Subscribe</button>
+<p class="status" role="status" aria-live="polite"></p>
+</form></section>
+</div>
+</div></section>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</main>
+<footer class="site"><div class="wrap bar">
+<p>&copy; 2026 Black Swan Marketing</p>
+<p><a href="/contact#newsletter">Join the newsletter</a></p>
+</div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

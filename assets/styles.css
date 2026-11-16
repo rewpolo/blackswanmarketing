@@ -1,0 +1,61 @@
+:root{--ink:#0B0D12;--paper:#FFF5EE;--swan:#F7F5F0;--graphite:#2B2F38;--gold:#A8842E;--gold-text:#7A5F1F;--crimson:#C8102E;--line:#E4DED6;--serif:"Playfair Display",Georgia,serif;--sans:Inter,system-ui,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--graphite);font:400 1.0625rem/1.65 var(--sans)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;color:var(--ink);line-height:1.12;margin:0}
+h1{font-size:clamp(2.3rem,5.5vw,4rem)}
+h2{font-size:clamp(1.7rem,3.2vw,2.3rem);margin-bottom:.75rem}
+h3{font-size:1.25rem}
+a{color:var(--ink)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:.6rem 1rem}
+.skip:focus{left:0;z-index:10}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+.narrow{max-width:680px}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+header.site{border-bottom:1px solid var(--line);padding:1rem 0}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font:600 1.15rem var(--serif);color:var(--ink)}
+nav a{margin-left:1.5rem;text-decoration:none;font-weight:500;padding:.25rem 0;border-bottom:2px solid transparent}
+nav a:hover,nav a[aria-current]{border-bottom-color:var(--gold)}
+footer.site{border-top:1px solid var(--line);padding:1.5rem 0;font-size:.95rem}
+footer.site p{margin:0}
+.lede{font-size:1.2rem;max-width:34rem;margin:1.25rem 0 0}
+.actions{display:flex;gap:1rem;flex-wrap:wrap;margin:1.75rem 0 0}
+.btn{display:inline-block;background:var(--crimson);color:#fff;border:2px solid var(--crimson);padding:.8rem 1.4rem;border-radius:4px;font:500 1rem var(--sans);text-decoration:none;cursor:pointer}
+.btn:hover{background:#A60D26;border-color:#A60D26}
+.btn.alt{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn.alt:hover{background:var(--ink);color:var(--paper)}
+.btn:disabled{opacity:.6;cursor:wait}
+.hero{padding:4.5rem 0}
+.hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem;align-items:center}
+.swan{width:100%;max-width:380px;justify-self:center}
+.swan path{stroke:var(--gold);stroke-width:5}
+.swan path[pathLength]{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.6s .2s ease forwards}
+.swan .beak{fill:var(--gold);stroke-width:3;opacity:0;animation:show .4s 1.6s forwards}
+.swan .eye{fill:var(--crimson);opacity:0;animation:show .3s 2s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes show{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.swan path[pathLength]{animation:none;stroke-dashoffset:0}.swan .beak,.swan .eye{animation:none;opacity:1}}
+.band-light{padding:4rem 0;background:var(--swan)}
+.rows{margin-top:1.5rem}
+.row{display:grid;grid-template-columns:1fr 1.6fr;gap:2rem;padding:1.5rem 0;border-top:1px solid var(--line)}
+.row p{margin:0}
+.band-ink{padding:4rem 0;background:var(--ink);color:#E8E4DC}
+.band-ink h2{color:var(--swan)}
+.band-ink p{max-width:34rem}
+.page{padding:3.5rem 0 5rem}
+.page p{max-width:40rem}
+.work{display:grid;grid-template-columns:repeat(6,1fr);gap:2.5rem 1.5rem;margin-top:2.5rem}
+.ph{margin:0;grid-column:span 3}
+.ph.w4{grid-column:span 4}.ph.w2{grid-column:span 2}
+.frame{display:grid;place-items:center;min-height:260px;border:1.5px dashed var(--gold);background:var(--swan);color:var(--gold-text);font-size:.95rem}
+figcaption{margin-top:.75rem}
+figcaption p{margin:.25rem 0 0;font-size:.97rem}
+.forms{display:grid;grid-template-columns:1.4fr 1fr;gap:4rem;margin-top:2.5rem}
+.forms section{scroll-margin-top:1.5rem}
+form{display:grid;gap:1rem;margin-top:1.25rem}
+label{display:grid;gap:.35rem;font-weight:500;color:var(--ink);font-size:.97rem}
+input,select,textarea{font:400 1rem var(--sans);color:var(--ink);background:#fff;border:1px solid #8A8279;border-radius:4px;padding:.7rem .8rem;width:100%}
+.hp{position:absolute;left:-9999px}
+.status{margin:0;min-height:1.5em;font-weight:500}
+.status.ok{color:var(--gold-text)}.status.err{color:var(--crimson)}
+@media (max-width:760px){.hero-grid,.forms,.row{grid-template-columns:1fr}.hero{padding:3rem 0}.swan{max-width:220px;justify-self:start}.work{grid-template-columns:1fr}.ph,.ph.w4,.ph.w2{grid-column:auto}nav a{margin:0 1rem 0 0}.forms{gap:3rem}}
