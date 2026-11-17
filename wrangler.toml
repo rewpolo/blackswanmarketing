@@ -10,4 +10,4 @@ binding = "ASSETS"
 [[d1_databases]]
 binding = "DB"
 database_name = "black-swan-leads"
-database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+database_id = "04c7fd4a-df28-4a93-9a9a-d11316d9cbf3"
