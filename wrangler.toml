@@ -1,5 +1,5 @@
 # The name must match the Worker's name in your Cloudflare dashboard.
-name = "black-swan-marketing"
+name = "blackswanmarketing"
 main = "src/worker.js"
 compatibility_date = "2025-09-01"
 
