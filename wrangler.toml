@@ -12,18 +12,3 @@ binding = "DB"
 database_name = "black-swan-leads"
 database_id = "04c7fd4a-df28-4a93-9a9a-d11316d9cbf3"
 
-# ...
-[observability.logs]
-enabled = true
-head_sampling_rate = 1
-invocation_logs = true
-persist = true
-
-[observability.traces]
-enabled = false
-head_sampling_rate = 1
-persist = true
-
-[observability.issue_detection]
-enabled = false
-# ...
