@@ -20,6 +20,11 @@ async function parse(request, env) {
   const token = data["cf-turnstile-response"];
   if (!token) return { error: json({ error: "Complete the spam check and try again." }, 400) };
 
+  if (!env.TURNSTILE_SECRET) {
+    console.error("TURNSTILE_SECRET is not set on this Worker. Add it under Settings > Variables and Secrets as a Secret.");
+    return { error: json({ error: "The spam check failed (server is missing its secret key)." }, 500) };
+  }
+
   const check = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
     method: "POST",
     body: new URLSearchParams({
@@ -29,7 +34,12 @@ async function parse(request, env) {
     })
   });
   const result = await check.json();
-  if (!result.success) return { error: json({ error: "The spam check failed. Please try again." }, 400) };
+  if (!result.success) {
+    // Turnstile says why it failed, e.g. "invalid-input-secret" (wrong secret) or "timeout-or-duplicate" (token reused).
+    const codes = (result["error-codes"] || []).join(", ") || "unknown";
+    console.error("Turnstile check failed:", codes, "hostname:", result.hostname);
+    return { error: json({ error: `The spam check failed (${codes}). Please try again.` }, 400) };
+  }
   return { data };
 }
 
